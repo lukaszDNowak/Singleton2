@@ -33,7 +33,7 @@ namespace Singleton2
     {
     private static SimpleLogger instance;
     public static string filePath;
-    private static List<string> strings = null;
+    private static List<string> logs = null;
     private SimpleLogger() { }
     public static SimpleLogger Instance(string _filePath)
     {
@@ -52,13 +52,13 @@ namespace Singleton2
     {
         if (File.Exists(filePath))
         {
-            strings = File.ReadAllLines(filePath).ToList();
+            logs = File.ReadAllLines(filePath).ToList();
         }
         else
-            strings = new List<string>();
+            logs = new List<string>();
 
-        strings.Add(Convert.ToString(DateTime.Now) + "_" + messege);
-        File.WriteAllLines(filePath, strings.ToArray());
+        logs.Add(Convert.ToString(DateTime.Now) + "_" + messege);
+        File.WriteAllLines(filePath, logs.ToArray());
     }
 }
 
