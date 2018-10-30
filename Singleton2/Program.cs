@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Singleton2
@@ -23,7 +24,7 @@ namespace Singleton2
                 Console.WriteLine("Zapis b³êdu do pliku");
                 SimpleLogger.Instance(@"D:/Logs").Error(ex.Message);
             }
-            Console.Read();
+            Thread.Sleep(3000);
         }
 
     }
